@@ -10,6 +10,9 @@
 <meta property="og:image" content="hero.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Светлана Лукашева — торты и десерты на заказ","image":"https://sweetluck.ru/hero.jpg","telephone":"+79612863153","url":"https://sweetluck.ru","priceRange":"₽₽","servesCuisine":"Торты и десерты на заказ","areaServed":"Москва и Московская область","sameAs":["https://t.me/+0aY9O7EHQD4yZjVi"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -109,11 +112,64 @@ footer em{font-family:'PT Serif',serif}
 .cake h3{color:var(--rose-d);font-size:1.16rem;margin-bottom:8px}
 .cake p{font-size:.97rem;margin:0}
 @media(max-width:700px){ .cakes{grid-template-columns:1fr} }
+
+/* smooth scroll + anchor offset under sticky nav */
+html{scroll-behavior:smooth}
+section[id],header[id]{scroll-margin-top:58px}
+
+/* steps */
+.steps{padding:60px 0 8px;text-align:center}
+.steps h2{color:var(--rose-d);font-size:1.9rem;margin-bottom:34px}
+.steps .row{display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
+.step{background:#fff;border-radius:12px;padding:24px 18px;box-shadow:0 3px 14px rgba(74,59,56,.10)}
+.step .num{width:42px;height:42px;border-radius:50%;background:var(--rose);color:#fff;
+  font-family:'PT Serif',serif;font-size:1.3rem;font-weight:700;display:flex;align-items:center;
+  justify-content:center;margin:0 auto 14px}
+.step h3{color:var(--rose-d);font-size:1.08rem;margin-bottom:6px}
+.step p{font-size:.94rem}
+@media(max-width:700px){.steps .row{grid-template-columns:1fr 1fr}}
+
+/* info cards (delivery / payment) */
+.info{padding:56px 0 8px}
+.info h2{text-align:center;color:var(--rose-d);font-size:1.9rem;margin-bottom:30px}
+.info .cols{display:grid;gap:20px;grid-template-columns:1fr 1fr;max-width:880px;margin:0 auto}
+.info .card{background:#fff;border-radius:12px;padding:26px;box-shadow:0 3px 14px rgba(74,59,56,.10);
+  border-top:3px solid var(--rose)}
+.info .card h3{color:var(--rose-d);font-size:1.18rem;margin-bottom:10px}
+.info .card p{font-size:.97rem;margin-bottom:.6em}
+.info .card .free{color:var(--rose-d);font-weight:700}
+@media(max-width:700px){.info .cols{grid-template-columns:1fr}}
+
+/* faq */
+.faq{padding:56px 0 8px;max-width:820px;margin:0 auto}
+.faq h2{text-align:center;color:var(--rose-d);font-size:1.9rem;margin-bottom:26px}
+.faq details{background:#fff;border-radius:10px;padding:2px 20px;margin-bottom:12px;
+  box-shadow:0 3px 14px rgba(74,59,56,.08)}
+.faq summary{cursor:pointer;padding:16px 28px 16px 0;font-weight:700;color:var(--rose-d);
+  list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';position:absolute;right:2px;top:13px;font-size:1.4rem;color:var(--rose)}
+.faq details[open] summary::after{content:'\2013'}
+.faq details p{padding:0 0 16px;font-size:.97rem}
+
+/* reviews */
+.reviews{padding:56px 0 8px;text-align:center}
+.reviews h2{color:var(--rose-d);font-size:1.9rem;margin-bottom:8px}
+.reviews .sub{font-family:'PT Serif',serif;font-style:italic;margin-bottom:18px}
+.tg-channel{display:inline-block;color:#2AABEE;font-weight:700;text-decoration:none}
+.tg-channel:hover{text-decoration:underline}
+
+/* back to top */
+.totop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;
+  background:var(--rose);color:#fff;text-decoration:none;display:flex;align-items:center;
+  justify-content:center;font-size:1.4rem;box-shadow:0 4px 14px rgba(0,0,0,.25);
+  opacity:0;pointer-events:none;transition:opacity .25s;z-index:60}
+.totop.show{opacity:1;pointer-events:auto}
 </style>
 </head>
 <body>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="hero-inner">
     <div class="kicker">Кондитерские изделия ручной работы</div>
     <h1>Светлана Лукашева</h1>
@@ -132,7 +188,8 @@ footer em{font-family:'PT Serif',serif}
   <div class="wrap">
     <a href="#about">Обо мне</a>
     <a href="#works">Работы</a>
-    <a href="#menu">Меню и цены</a>
+    <a href="#menu">Меню</a>
+    <a href="#order">Как заказать</a>
     <a href="#contact">Контакты</a>
   </div>
 </nav>
@@ -267,8 +324,50 @@ footer em{font-family:'PT Serif',serif}
   </div>
 </section>
 
+<section class="steps wrap" id="order">
+  <h2>Как сделать заказ</h2>
+  <div class="row">
+    <div class="step"><div class="num">1</div><h3>Напишите</h3><p>В WhatsApp или Telegram — расскажите про повод, дату и сколько будет гостей.</p></div>
+    <div class="step"><div class="num">2</div><h3>Согласуем</h3><p>Вместе подберём вкус, дизайн, вес и оформление под ваш праздник.</p></div>
+    <div class="step"><div class="num">3</div><h3>Подтверждаем</h3><p>Фиксирую за вами дату. Условия предоплаты обсудим при подтверждении заказа.</p></div>
+    <div class="step"><div class="num">4</div><h3>Получаете</h3><p>Самовывоз или доставка Яндекс Доставкой — точно в срок и в идеальном виде.</p></div>
+  </div>
+</section>
+
+<section class="info wrap" id="delivery">
+  <h2>Доставка и оплата</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Доставка</h3>
+      <p>Привезу через Яндекс Доставку — по тарифам сервиса.</p>
+      <p class="free">При заказе от 3000 ₽ доставка в радиусе 30 км — бесплатно.</p>
+      <p>Можно и забрать самовывозом — место и время согласуем при заказе.</p>
+    </div>
+    <div class="card">
+      <h3>Оплата</h3>
+      <p>Удобным для вас переводом. Работаю официально как самозанятая.</p>
+      <p>После оплаты пришлю чек из приложения «Мой налог» — всё прозрачно.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq wrap" id="faq">
+  <h2>Вопросы и ответы</h2>
+  <details><summary>За сколько нужно заказывать?</summary><p>Лучше заранее — за несколько дней. К праздникам и на сложные торты записывайтесь раньше: такие даты разбирают быстро.</p></details>
+  <details><summary>Какой минимальный заказ?</summary><p>Обсуждается индивидуально. Для бесплатной доставки в радиусе 30 км сумма заказа должна быть от 3000 ₽.</p></details>
+  <details><summary>Есть ли десерты без сахара или с учётом аллергий?</summary><p>Да, часть позиций можно адаптировать — например, джем без сахара. Обязательно предупредите об аллергиях: в составе бывают орехи, молочные продукты и глютен.</p></details>
+  <details><summary>Можно торт по своему дизайну?</summary><p>Конечно. Повторю по вашему фото, идее или даже воспоминанию из детства — детали обсудим при заказе.</p></details>
+  <details><summary>Фотографии на сайте — настоящие?</summary><p>Да, всё это мои реальные работы, которые были испечены и с теплом переданы заказчикам. Никаких картинок из интернета.</p></details>
+</section>
+
+<section class="reviews wrap" id="reviews">
+  <h2>Отзывы</h2>
+  <p class="sub">Здесь скоро появятся отзывы моих заказчиков</p>
+  <a class="tg-channel" href="https://t.me/+0aY9O7EHQD4yZjVi" target="_blank" rel="noopener">Свежие работы и отзывы — в моём Telegram-канале →</a>
+</section>
+
 <section class="contact" id="contact">
-  <h2>Как заказать</h2>
+  <h2>Контакты</h2>
   <p>Напишите мне в WhatsApp или Telegram либо позвоните — обсудим повод, количество гостей,
   вкусы и оформление. Заказы лучше делать заранее, особенно к праздникам.</p>
   <a class="phone-big" href="tel:+79612863153">+7 961 286-31-53</a>
@@ -278,9 +377,16 @@ footer em{font-family:'PT Serif',serif}
        target="_blank" rel="noopener">WhatsApp</a>
     <a class="btn tg" href="https://t.me/svetlana_lozo" target="_blank" rel="noopener">Telegram</a>
   </div>
+  <p style="margin-top:22px"><a class="tg-channel" href="https://t.me/+0aY9O7EHQD4yZjVi" target="_blank" rel="noopener">Подписывайтесь на мой Telegram-канал — там новые работы и анонсы →</a></p>
 </section>
 
 <footer><em>Каждое изделие — вручную, с любовью к деталям. Буду рада сделать ваш праздник особенным!</em></footer>
+
+<a href="#top" class="totop" aria-label="Наверх">&#8593;</a>
+<script>
+  var _t=document.querySelector('.totop');
+  window.addEventListener('scroll',function(){_t.classList.toggle('show',window.scrollY>500)});
+</script>
 
 </body>
 </html>
