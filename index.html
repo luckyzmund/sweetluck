@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Светлана Лукашева — торты и десерты на заказ</title>
+<meta name="description" content="Кондитерские изделия ручной работы на заказ: торты, бенто, бельгийский шоколад, капкейки, имбирные пряники. Светлана Лукашева, +7 961 286-31-53">
+<meta property="og:title" content="Светлана Лукашева — торты и десерты на заказ">
+<meta property="og:description" content="Кондитерские изделия ручной работы. Каждое изделие — вручную, с любовью к деталям.">
+<meta property="og:image" content="hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF6F0; --rose:#C4838F; --rose-d:#9C616C; --text:#4A3B38; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'PT Sans',Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+h1,h2,h3{font-family:'PT Serif',Georgia,serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;
+  background:url('hero.jpg') center 40%/cover no-repeat}
+.hero::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(60,42,40,.18) 0%,rgba(60,42,40,.30) 45%,rgba(60,42,40,.88) 100%)}
+.hero-inner{position:relative;z-index:1;width:100%;text-align:center;color:#fff;padding:56px 20px 64px;
+  text-shadow:0 1px 3px rgba(40,25,23,.55),0 2px 14px rgba(40,25,23,.35)}
+.hero .kicker{font-family:'PT Serif',serif;font-style:italic;font-size:1.05rem;letter-spacing:.06em;opacity:.95}
+.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);margin:.25em 0 .35em}
+.hero p.sub{max-width:560px;margin:0 auto 1.6em;font-size:1.06rem;opacity:.95}
+.btn{display:inline-block;padding:14px 34px;border-radius:40px;background:#3FA85E;color:#fff;
+  font-weight:700;text-decoration:none;font-size:1.05rem;box-shadow:0 4px 18px rgba(0,0,0,.25);
+  transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.rose{background:var(--rose)}
+.btn.tg{background:#2AABEE}
+.hero .phone{display:block;margin-top:14px;color:#fff;text-decoration:none;font-size:1.15rem;letter-spacing:.04em}
+
+/* intro */
+.intro{padding:64px 0 8px;text-align:center}
+.intro h2{color:var(--rose-d);font-size:1.9rem;margin-bottom:.6em}
+.intro p{max-width:640px;margin:0 auto 1em;font-size:1.05rem}
+.intro .real{font-family:'PT Serif',serif;font-style:italic;color:var(--rose-d);
+  border-top:1px solid var(--rose);border-bottom:1px solid var(--rose);
+  padding:18px 10px;max-width:680px;margin:28px auto 0;font-size:1.08rem}
+
+/* gallery */
+section.cat{padding:48px 0 8px}
+.cat h3{text-align:center;color:var(--rose-d);font-size:1.5rem;margin-bottom:6px}
+.cat .sub{text-align:center;font-family:'PT Serif',serif;font-style:italic;font-size:.98rem;margin-bottom:26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.grid.g2{grid-template-columns:repeat(2,1fr);max-width:760px;margin:0 auto}
+.grid a{display:block;border-radius:10px;overflow:hidden;background:#fff;
+  box-shadow:0 3px 14px rgba(74,59,56,.12)}
+.grid img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .25s}
+.grid a:hover img{transform:scale(1.04)}
+
+/* contact */
+.contact{margin-top:72px;padding:64px 20px;background:linear-gradient(180deg,#F3E2DC,#EFD6CF);text-align:center}
+.contact h2{color:var(--rose-d);font-size:1.9rem;margin-bottom:.5em}
+.contact p{max-width:600px;margin:0 auto 1em}
+.contact .phone-big{font-family:'PT Serif',serif;font-size:2rem;font-weight:700;color:var(--rose-d);
+  text-decoration:none;display:block;margin:18px 0 6px}
+.contact .ways{font-size:.95rem;margin-bottom:26px}
+.btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:26px;text-align:center;font-size:.88rem;color:var(--rose-d)}
+footer em{font-family:'PT Serif',serif}
+
+@media(max-width:700px){
+  .grid,.grid.g2{grid-template-columns:repeat(2,1fr)}
+  .grid img{height:170px}
+  .hero{min-height:64vh}
+}
+@media(max-width:420px){
+  .grid,.grid.g2{grid-template-columns:1fr 1fr}
+  .grid img{height:150px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Кондитерские изделия ручной работы</div>
+    <h1>Светлана Лукашева</h1>
+    <p class="sub">Торты и десерты на заказ для ваших праздников — от нежных меренговых тортов
+    и муссовых пирожных до бельгийского шоколада и имбирных пряников.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://wa.me/79612863153?text=Здравствуйте%2C%20Светлана!%20Хочу%20заказать%20десерт."
+         target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn tg" href="https://t.me/svetlana_lozo" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+    <a class="phone" href="tel:+79612863153">+7 961 286-31-53</a>
+  </div>
+</header>
+
+<section class="intro wrap">
+  <h2>Сделаю праздник вкусным</h2>
+  <p>Принимаю заказы на торты и десерты к дням рождения, юбилеям, свадьбам, детским
+  и корпоративным праздникам. Дизайн обсуждаем индивидуально — учту любые пожелания
+  по вкусу, оформлению и упаковке.</p>
+  <p class="real">Всё, что вы видите на этой странице, — не картинки из интернета,
+  а мои настоящие изделия: каждое было испечено, украшено
+  и с теплом передано в руки заказчикам.</p>
+</section>
+
+<section class="cat wrap">
+  <h3>Праздничные торты на заказ</h3>
+  <p class="sub">Любой повод, дизайн и сложность — от классики до самых смелых идей</p>
+  <div class="grid">
+    <a href="torty-1.jpg"><img src="torty-1.jpg" alt="Торт с синими цветами" loading="lazy"></a>
+    <a href="torty-2.jpg"><img src="torty-2.jpg" alt="Белый торт с жемчугом и бантом" loading="lazy"></a>
+    <a href="torty-3.jpg"><img src="torty-3.jpg" alt="Торт с клубникой" loading="lazy"></a>
+    <a href="torty-4.jpg"><img src="torty-4.jpg" alt="Юбилейный торт с белыми цветами" loading="lazy"></a>
+    <a href="torty-5.jpg"><img src="torty-5.jpg" alt="Торт футбольное поле" loading="lazy"></a>
+    <a href="torty-6.jpg"><img src="torty-6.jpg" alt="Торт-замок" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="cat wrap">
+  <h3>Меренговые и бенто-торты</h3>
+  <p class="sub">Воздушная меренга — и компактные бенто с любой картинкой</p>
+  <div class="grid">
+    <a href="merengi-1.jpg"><img src="merengi-1.jpg" alt="Меренговый торт" loading="lazy"></a>
+    <a href="merengi-3.jpg"><img src="merengi-3.jpg" alt="Меренговый торт в подарочной коробке" loading="lazy"></a>
+    <a href="bento-1.jpg"><img src="bento-1.jpg" alt="Бенто-торты с картинками" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="cat wrap">
+  <h3>Бельгийский шоколад и клубника в шоколаде</h3>
+  <p class="sub">Подарочные наборы ручной работы — нарядно упакованы и готовы удивлять</p>
+  <div class="grid">
+    <a href="choco-1.jpg"><img src="choco-1.jpg" alt="Шоколадные сердца в коробке" loading="lazy"></a>
+    <a href="choco-2.jpg"><img src="choco-2.jpg" alt="Клубника в шоколаде" loading="lazy"></a>
+    <a href="choco-3.jpg"><img src="choco-3.jpg" alt="Шоколадные медальоны с орехами и цветами" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="cat wrap">
+  <h3>Пирожное «Картошка», кейк-попсы и конфеты</h3>
+  <p class="sub">Сахарная обёртка с любой надписью — отличный комплимент и подарок</p>
+  <div class="grid g2">
+    <a href="kartoshka-1.jpg"><img src="kartoshka-1.jpg" alt="Шоколадные трюфели" loading="lazy"></a>
+    <a href="kartoshka-2.jpg"><img src="kartoshka-2.jpg" alt="Пирожное картошка в розовой глазури" loading="lazy"></a>
+    <a href="kartoshka-3.jpg"><img src="kartoshka-3.jpg" alt="Букет из кейк-попсов" loading="lazy"></a>
+    <a href="kartoshka-4.jpg"><img src="kartoshka-4.jpg" alt="Классическое пирожное картошка" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="cat wrap">
+  <h3>Торты в шоколадной чашке и трайфлы</h3>
+  <p class="sub">Съедобная чашка из шоколада — десерт, который запоминают</p>
+  <div class="grid g2">
+    <a href="cups-1.jpg"><img src="cups-1.jpg" alt="Шоколадные стаканы с кремовыми розами" loading="lazy"></a>
+    <a href="cups-2.jpg"><img src="cups-2.jpg" alt="Золотая шоколадная чашка" loading="lazy"></a>
+    <a href="cups-3.jpg"><img src="cups-3.jpg" alt="Белые шоколадные чашки с розами" loading="lazy"></a>
+    <a href="cups-4.jpg"><img src="cups-4.jpg" alt="Шоколадные трайфлы" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="cat wrap">
+  <h3>Капкейки, муссовые пирожные и корзиночки</h3>
+  <p class="sub">Маленькие десерты для большого праздника — наборы любого размера</p>
+  <div class="grid">
+    <a href="cupcakes-1.jpg"><img src="cupcakes-1.jpg" alt="Капкейки с черникой" loading="lazy"></a>
+    <a href="cupcakes-2.jpg"><img src="cupcakes-2.jpg" alt="Тарталетки с клубникой и ягодами" loading="lazy"></a>
+    <a href="cupcakes-3.jpg"><img src="cupcakes-3.jpg" alt="Розовые бенто-пирожные с цветами" loading="lazy"></a>
+    <a href="cupcakes-4.jpg"><img src="cupcakes-4.jpg" alt="Муссовые пирожные сердце" loading="lazy"></a>
+    <a href="cupcakes-5.jpg"><img src="cupcakes-5.jpg" alt="Муссовые пирожные" loading="lazy"></a>
+    <a href="cupcakes-6.jpg"><img src="cupcakes-6.jpg" alt="Пирожные корзиночки" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="cat wrap">
+  <h3>Имбирные пряники и леденцы</h3>
+  <p class="sub">Расписные пряники и леденцы с картинкой на выбор — под вашу тему</p>
+  <div class="grid g2">
+    <a href="pryaniki-1.jpg"><img src="pryaniki-1.jpg" alt="Пряничное панно с деревом" loading="lazy"></a>
+    <a href="pryaniki-2.jpg"><img src="pryaniki-2.jpg" alt="Пряники с воздушными шарами" loading="lazy"></a>
+    <a href="pryaniki-3.jpg"><img src="pryaniki-3.jpg" alt="Пряники с гимнастками" loading="lazy"></a>
+    <a href="pryaniki-4.jpg"><img src="pryaniki-4.jpg" alt="Букет из леденцов" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Как заказать</h2>
+  <p>Напишите мне в WhatsApp или позвоните — обсудим повод, количество гостей,
+  вкусы и оформление. Заказы лучше делать заранее, особенно к праздникам.</p>
+  <a class="phone-big" href="tel:+79612863153">+7 961 286-31-53</a>
+  <div class="ways">Светлана Лукашева · WhatsApp · Telegram · звонок</div>
+  <div class="btn-row">
+    <a class="btn" href="https://wa.me/79612863153?text=Здравствуйте%2C%20Светлана!%20Хочу%20заказать%20десерт."
+       target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn tg" href="https://t.me/svetlana_lozo" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</section>
+
+<footer><em>Каждое изделие — вручную, с любовью к деталям. Буду рада сделать ваш праздник особенным!</em></footer>
+
+</body>
+</html>
