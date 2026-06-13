@@ -77,6 +77,36 @@ footer em{font-family:'PT Serif',serif}
   .grid,.grid.g2{grid-template-columns:1fr 1fr}
   .grid img{height:150px}
 }
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,240,.95);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:1px solid #ecd9d3}
+.nav .wrap{display:flex;gap:8px 24px;justify-content:center;flex-wrap:wrap;padding:13px 20px}
+.nav a{color:var(--rose-d);text-decoration:none;font-size:.98rem;font-weight:700;letter-spacing:.02em}
+.nav a:hover{color:var(--rose)}
+
+/* about */
+.about{padding:64px 0 8px;text-align:center}
+.about h2{color:var(--rose-d);font-size:1.9rem;margin-bottom:.7em}
+.about .lead{max-width:680px;margin:0 auto;font-size:1.06rem}
+.about .lead p{margin:0 0 1em}
+.about .lead b{color:var(--rose-d)}
+.about .sign{font-family:'PT Serif',serif;font-style:italic;color:var(--rose-d);
+  font-size:1.14rem;margin-top:6px}
+
+/* menu / price list */
+.menu{padding:60px 0 8px}
+.menu h2{text-align:center;color:var(--rose-d);font-size:1.9rem;margin-bottom:.2em}
+.menu .note{text-align:center;font-family:'PT Serif',serif;font-style:italic;margin-bottom:10px}
+.menu .price-tag{text-align:center;font-family:'PT Serif',serif;font-size:1.4rem;font-weight:700;
+  color:var(--rose-d);margin-bottom:34px}
+.menu .price-tag span{font-size:.95rem;font-weight:400;font-style:italic}
+.cakes{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+.cake{background:#fff;border-radius:12px;padding:22px 24px;
+  box-shadow:0 3px 14px rgba(74,59,56,.10);border-left:3px solid var(--rose)}
+.cake h3{color:var(--rose-d);font-size:1.16rem;margin-bottom:8px}
+.cake p{font-size:.97rem;margin:0}
+@media(max-width:700px){ .cakes{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -96,6 +126,33 @@ footer em{font-family:'PT Serif',serif}
   </div>
 </header>
 
+<nav class="nav">
+  <div class="wrap">
+    <a href="#about">Обо мне</a>
+    <a href="#works">Работы</a>
+    <a href="#menu">Меню и цены</a>
+    <a href="#contact">Контакты</a>
+  </div>
+</nav>
+
+<section class="about wrap" id="about">
+  <h2>Обо мне</h2>
+  <div class="lead">
+    <p>Дорогие друзья! Я Светлана, и я домашний кондитер. Мне нравится именно домашняя
+    магия. Нравится, что я лично знаю вкус каждого крема, каждого ингредиента, которые
+    готовлю, и могу ручаться за <b>каждую ягодку в моём изделии</b>.</p>
+    <p>Нравится общаться с вами лично, слушать ваши истории и вкладывать в каждый заказ
+    частичку своей души, которая стремится порадовать другого человека — маленького
+    или большого.</p>
+    <p>Мои десерты — это не масс-маркет. Это камерные, уникальные истории в коробке
+    для вас. Они для тех, кто действительно понимает, что значит вкусно.</p>
+    <p>Для тех, кто ценит ручную работу, внимание к деталям и тот самый, неповторимый
+    <b>«домашний вкус» или вкус детства</b>. Я приготовлю любой десерт по вашему желанию
+    или вашему воспоминанию.</p>
+    <p class="sign">Я — домашний кондитер, и люблю то, что я делаю, и люблю вас всех.</p>
+  </div>
+</section>
+
 <section class="intro wrap">
   <h2>Сделаю праздник вкусным</h2>
   <p>Принимаю заказы на торты и десерты к дням рождения, юбилеям, свадьбам, детским
@@ -106,7 +163,7 @@ footer em{font-family:'PT Serif',serif}
   и с теплом передано в руки заказчикам.</p>
 </section>
 
-<section class="cat wrap">
+<section class="cat wrap" id="works">
   <h3>Праздничные торты на заказ</h3>
   <p class="sub">Любой повод, дизайн и сложность — от классики до самых смелых идей</p>
   <div class="grid">
@@ -182,6 +239,29 @@ footer em{font-family:'PT Serif',serif}
     <a href="pryaniki-2.jpg"><img src="pryaniki-2.jpg" alt="Пряники с воздушными шарами" loading="lazy"></a>
     <a href="pryaniki-3.jpg"><img src="pryaniki-3.jpg" alt="Пряники с гимнастками" loading="lazy"></a>
     <a href="pryaniki-4.jpg"><img src="pryaniki-4.jpg" alt="Букет из леденцов" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="menu wrap" id="menu">
+  <h2>Меню тортов</h2>
+  <p class="note">Любой торт готовлю на заказ под ваш праздник — вес и оформление обсудим индивидуально</p>
+  <p class="price-tag">2 000 ₽ <span>/ кг</span></p>
+  <div class="cakes">
+    <div class="cake"><h3>Медовик</h3><p>Тонкие медовые коржи. Много крема — сливочно-заварного или сметанного на ваш выбор.</p></div>
+    <div class="cake"><h3>Наполеон классический</h3><p>Тонкие, слоёные, не сладкие коржи. Сливочно-заварной ванильный крем.</p></div>
+    <div class="cake"><h3>Киевский</h3><p>Безе с фундуком, крем из сливочного масла и варёной сгущёнки.</p></div>
+    <div class="cake"><h3>Птичье молоко</h3><p>Тонкий слой бисквита, пропитанный ванильным молочным коктейлем. Суфле из сливок, сгущённого молока, яичного белка и сахарной пудры. Сверху глазурь из шоколада (по вкусу: горький, молочный, белый).</p></div>
+    <div class="cake"><h3>Молочная девочка</h3><p>Многослойный торт. Тонкие коржи на основе сгущённого молока. Крем по вашему вкусу: сливочно-заварной, чиз на масле, чиз на сливках, пломбир, йогуртовый. Можно добавить ягодное конфи в прослойку.</p></div>
+    <div class="cake"><h3>Трюфельный</h3><p>Шоколадный шифоновый бисквит, пропитанный сиропом из тростникового сахара и виски, шоколадный сливочно-заварной крем, шоколадный ганаш.</p></div>
+    <div class="cake"><h3>Капучино</h3><p>Шоколадный бисквит, пропитанный натуральным свежесваренным итальянским кофе с капелькой рома. Крем — взбитые сливки со сгущённым молоком и ромом.</p></div>
+    <div class="cake"><h3>Красный бархат</h3><p>Знаменитый американский десерт: нежные, влажные коржи рубинового цвета с лёгким шоколадным вкусом и бархатистой структурой. Пышный крем-чиз на сливках. По желанию — ягодный конфи.</p></div>
+    <div class="cake"><h3>Морковный</h3><p>Кексовые коржи с морковью, изюмом и грецким орехом, пропитанные ромом с сиропом. Крем-чиз на сливках.</p></div>
+    <div class="cake"><h3>Москва (моя версия)</h3><p>Слой безе с фундуком. Слой бисквитной крошки, пропитанной ромом с колой. Крем: сливочное масло, варёная сгущёнка, ром. Покрыт глазурью из сливок, белого шоколада и сливочного масла.</p></div>
+    <div class="cake"><h3>Фрезье</h3><p>Бисквит с фисташкой, пропитанный зелёным чаем Улун, малиновая прослойка из свежей малины, перетёртой с сахаром (желированная по желанию), крем: сливочное масло и сгущённое молоко. Украшен малиной в сезон, мармеладом в форме малины в другое время.</p></div>
+    <div class="cake"><h3>Тропический фреш</h3><p>Бисквит с молочной пропиткой, джемом без сахара из манго или желе из свежего манго. Крем-чиз на сливочном масле. Украшен миндалём со штрейзелем и бельгийским шоколадом. Вкус фруктов на выбор: мандарин, апельсин, киви, банан.</p></div>
+    <div class="cake"><h3>Майский (клубника-лимон)</h3><p>Нежный хлопковый бисквит с цедрой лимона, пропитанный молоком, свежая клубника и воздушный йогуртовый сливочно-заварной крем. Украшен бельгийским шоколадом и свежей ягодой.</p></div>
+    <div class="cake"><h3>Лавандовый</h3><p>Воздушный шифоновый бисквит, пропитанный свежезаваренным лавандовым чаем, смородиновый или черничный джем, лёгкий крем: чиз на сливках, муссовый, пломбир или йогуртовый на выбор.</p></div>
+    <div class="cake"><h3>Мята-лимон-шоколад</h3><p>Шоколадный бисквит, пропитанный зелёным чаем с мятой, лимонный конфи, нежнейший мятный пудинг. Сверху крем-чиз на сливках.</p></div>
   </div>
 </section>
 
