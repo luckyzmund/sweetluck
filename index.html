@@ -22,6 +22,17 @@
 <meta name="theme-color" content="#C4838F">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Yandex.Metrika counter -->
+<script>
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=111872243','ym');
+  ym(111872243,'init',{ssr:true,clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Bakery","@id":"https://sweetluck.ru/#bakery","name":"Светлана Лукашева — торты и десерты на заказ","description":"Домашние торты и десерты ручной работы на заказ в Новой Москве. Самовывоз из ЖК Борисоглебское, доставка по Москве и Московской области.","image":"https://sweetluck.ru/hero.jpg","telephone":"+79612863153","url":"https://sweetluck.ru/","priceRange":"₽₽","servesCuisine":"Торты и десерты на заказ","areaServed":[{"@type":"Place","name":"Новая Москва"},{"@type":"City","name":"Москва"},{"@type":"AdministrativeArea","name":"Московская область"}],"contactPoint":{"@type":"ContactPoint","telephone":"+79612863153","contactType":"customer service","availableLanguage":"Russian"},"sameAs":["https://t.me/+0aY9O7EHQD4yZjVi"]}
 </script>
@@ -182,6 +193,7 @@ section[id],header[id]{scroll-margin-top:58px}
 </style>
 </head>
 <body>
+<noscript><div><img src="https://mc.yandex.ru/watch/111872243" style="position:absolute;left:-9999px" alt=""></div></noscript>
 
 <header class="hero" id="top">
   <div class="hero-inner">
@@ -399,6 +411,14 @@ section[id],header[id]{scroll-margin-top:58px}
 <script>
   var _t=document.querySelector('.totop');
   window.addEventListener('scroll',function(){_t.classList.toggle('show',window.scrollY>500)});
+  document.addEventListener('click',function(event){
+    var link=event.target.closest('a');
+    if(!link||typeof ym!=='function')return;
+    var href=link.getAttribute('href')||'';
+    if(href.indexOf('https://wa.me/')===0)ym(111872243,'reachGoal','whatsapp_click');
+    else if(href.indexOf('https://t.me/')===0)ym(111872243,'reachGoal','telegram_click');
+    else if(href.indexOf('tel:')===0)ym(111872243,'reachGoal','phone_click');
+  });
 </script>
 
 </body>
